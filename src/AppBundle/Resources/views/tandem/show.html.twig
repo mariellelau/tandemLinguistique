@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tandem</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>{{ tandem.user1 }}</td>
+            </tr>
+            <tr>
+                <td>{{ tandem.user2 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tandem_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('tandem_edit', { 'id': tandem.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -63,4 +63,60 @@ class User extends BaseUser
     {
         $this->city = $city;
     }
+    /**
+     * @var \AppBundle\Entity\Tandem
+     */
+    private $user1;
+
+    /**
+     * @var \AppBundle\Entity\Tandem
+     */
+    private $user2;
+
+
+    /**
+     * Set user1
+     *
+     * @param \AppBundle\Entity\Tandem $user1
+     * @return User
+     */
+    public function setUser1(\AppBundle\Entity\Tandem $user1 = null)
+    {
+        $this->user1 = $user1;
+
+        return $this;
+    }
+
+    /**
+     * Get user1
+     *
+     * @return \AppBundle\Entity\Tandem 
+     */
+    public function getUser1()
+    {
+        return $this->user1;
+    }
+
+    /**
+     * Set user2
+     *
+     * @param \AppBundle\Entity\Tandem $user2
+     * @return User
+     */
+    public function setUser2(\AppBundle\Entity\Tandem $user2 = null)
+    {
+        $this->user2 = $user2;
+
+        return $this;
+    }
+
+    /**
+     * Get user2
+     *
+     * @return \AppBundle\Entity\Tandem 
+     */
+    public function getUser2()
+    {
+        return $this->user2;
+    }
 }

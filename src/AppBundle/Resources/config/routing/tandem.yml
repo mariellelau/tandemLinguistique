@@ -1,0 +1,24 @@
+tandem_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Tandem:index" }
+    methods:  GET
+
+tandem_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Tandem:show" }
+    methods:  GET
+
+tandem_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Tandem:new" }
+    methods:  [GET, POST]
+
+tandem_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Tandem:edit" }
+    methods:  [GET, POST]
+
+tandem_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Tandem:delete" }
+    methods:  DELETE

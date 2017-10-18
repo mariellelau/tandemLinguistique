@@ -1,0 +1,18 @@
+AppBundle\Entity\Tandem:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TandemRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
+    oneToOne:
+        user1:
+            targetEntity: AppBundle\Entity\User
+            inversedBy: user1
+        user2:
+            targetEntity: AppBundle\Entity\User
+            inversedBy: user2

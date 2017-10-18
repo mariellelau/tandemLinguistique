@@ -18,7 +18,7 @@ class RegistrationType extends AbstractType
                 'options' => array('translation_domain' => 'FOSUserBundle'),
                 'first_options' => array('label' => 'Mot de passe'),
                 'second_options' => array('label' => 'Confirmation du mot de passe'),
-                'invalid_m  essage' => 'Les 2 mots de passe saisis ne correspondent pas',
+                'invalid_message' => 'Les 2 mots de passe saisis ne correspondent pas',
             ))
             ->add('city')
             ->remove('username')
