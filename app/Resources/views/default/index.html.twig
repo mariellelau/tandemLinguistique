@@ -6,4 +6,14 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dignissimos dolorem doloremque error exercitationem facilis iste iure iusto maxime nam nisi optio praesentium quam, quas quo repellat saepe vero voluptate?
     </div>
 </div>
+<div class="row">
+    <div class="col-md-offset-4 col-md-6">
+        <a class="btn" href="{{ path('fos_user_security_login') }}">Se connecter</a>
+    </div>
+</div>
+<div>
+    {% for user in users %}
+        {{ user.username }}
+    {% endfor %}
+</div>
 {% endblock %}
