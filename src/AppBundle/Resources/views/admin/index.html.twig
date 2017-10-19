@@ -1,39 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste des utilisateurs</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <h1>Liste des utilisateurs</h1>
 
-    <table>
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Prénom</th>
-            <th>Email</th>
-            <th>En tandem ?</th>
-        </tr>
-        </thead>
-        <tbody>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                        <th>Ville</th>
+                        <th>En tandem avec ?</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-        {% for user in users %}
-            <tr>
-                <td><a href="{{ path('tandem_new') }}">tandem</a></td>
-                <td>{{ user.username }}</td>
-                <td>{{ user.email }}</td>
-                <td>
-                    {% if user.tandem %}
-                            oui
-                        {% else %}
-                            pas encore
-                    {% endif %}
-                </td>
-                <td>{{ user.tandem.myTandem.firstName }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.city }}</td>
+                            <td>
+                                {% if user.tandem %}
+                            <td>{{ user.tandem.myTandem.firstName }}</td>
+                            {% else %}
+                                <td><a href="{{ path('tandem_new') }}">pas encore</a></td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
 
-    <button>
-        <a href="{{ path('tandem_new') }}">Créer un nouveau binôme</a>
-    </button>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

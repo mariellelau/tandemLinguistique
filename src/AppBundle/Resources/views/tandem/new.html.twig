@@ -1,16 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tandem creation</h1>
+    <h1>Création d'un binôme</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Valider" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('tandem_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <button>
+        <a href="{{ path('tandem_index') }}">Liste des binômes</a>
+    </button>
 {% endblock %}

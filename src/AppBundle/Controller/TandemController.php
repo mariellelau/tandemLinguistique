@@ -52,7 +52,7 @@ class TandemController extends Controller
             $em->persist($tandem);
             $em->flush();
 
-            return $this->redirectToRoute('tandem_show', array('id' => $tandem->getId()));
+            return $this->redirectToRoute('app_admin', array('id' => $tandem->getId()));
         }
 
         return $this->render('@App/tandem/new.html.twig', array(
