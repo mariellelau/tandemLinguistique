@@ -11,9 +11,9 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            Mot de passe
             {{ form_errors(form.plainPassword) }}
             {{ form_widget(form.plainPassword) }}
+
         </div>
     </div>
     <div class="row">
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div>
-        <input type="submit" value="{{ "Je m'inscris"|trans }}" />
+        <input class="btn btn-primary" type="submit" value="{{ "Je m'inscris"|trans }}" />
     </div>
 </div>
 

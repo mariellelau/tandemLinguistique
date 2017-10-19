@@ -5,6 +5,35 @@ body {
 .container {
     background-color: #FFFFFF;
     border: 1px black solid;
-    padding:10px;
-    margin-bottom: 10px;
+    padding:2px;
+    margin-bottom: 2px;
+}
+
+.btn {
+    padding:1em;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 900;
+    background: #25ADC0 ;
+    color: #ffffff ;
+    border: none;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.btn:active, .btn:focus {
+    background: #77B9C8 ;
+    color: #ffffff ;
+}
+
+.btn:hover {
+    padding:1em;
+    font-size: 17px;
+    color: #ffffff ;
+    font-weight: 900;
+    background: #77B9C8 ;
+    border: none;
+    transition: 300ms;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
