@@ -1,0 +1,20 @@
+AppBundle\Entity\User:
+    type:  entity
+    table: fos_user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+        city:
+            type: string
+            length: 255
+    oneToOne:
+        tandem:
+            targetEntity: AppBundle\Entity\Tandem
+            mappedBy: user
+    lifecycleCallbacks: {  }

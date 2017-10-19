@@ -1,0 +1,19 @@
+AppBundle\Entity\Tandem:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TandemRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
+    oneToOne:
+        user:
+            targetEntity: AppBundle\Entity\User
+        myTandem:
+            targetEntity: AppBundle\Entity\User
+            joinColumn:
+                name: myTandem_id
+                referencedColumnName: id

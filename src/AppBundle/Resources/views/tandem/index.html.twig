@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des binômes</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Personne 1</th>
+                <th>Personne 2</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tandem in tandems %}
+            <tr>
+                <td><a href="{{ path('tandem_show', { 'id': tandem.id }) }}">{{ tandem.id }}</a></td>
+                <td>{{ tandem.myTandem }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button>
+        <a href="{{ path('tandem_new') }}">Créer un nouveau binôme</a>
+    </button>
+
+{% endblock %}

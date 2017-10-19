@@ -1,0 +1,13 @@
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+
+app_tandem:
+    resource: "@AppBundle/Resources/config/routing/tandem.yml"
+    prefix:   /tandem
+
+
+app_admin:
+    defaults: { _controller: AppBundle:Default:admin }
+    path:     /admin/users

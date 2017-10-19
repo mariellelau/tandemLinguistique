@@ -13,9 +13,26 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ));
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('AppBundle:User')->findAll();
+
+        return $this->render(':default:index.html.twig', array(
+                'users' => $users,
+            )
+        );
+    }
+
+    /**
+     * @Route("/admin/users", name="admin")
+     */
+    public function adminAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('AppBundle:User')->findAll();
+
+        return $this->render('@App/admin/index.html.twig', array(
+                'users' => $users,
+            )
+        );
     }
 }

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tandem</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            Personne 1 : {{ tandem.user.firstName }}
+            Personne 2 : {{ tandem.myTandem.firstName }}
+        </div>
+    </div>
+</div>
+    <ul>
+        <li>
+            <a href="{{ path('tandem_index') }}">Liste des binômes</a>
+        </li>
+        <li>
+            <a href="{{ path('tandem_edit', { 'id': tandem.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer le binôme">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
