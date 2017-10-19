@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -50,9 +49,6 @@ class User extends BaseUser
         $this->firstName = $firstName;
     }
 
-    /**
-     * @ORM\Column(type="string")
-     */
     private $city;
 
     public function getCity()
@@ -64,59 +60,59 @@ class User extends BaseUser
         $this->city = $city;
     }
     /**
-     * @var \AppBundle\Entity\Tandem
+     * @var \AppBundle\Entity\User
      */
-    private $user1;
-
-    /**
-     * @var \AppBundle\Entity\Tandem
-     */
-    private $user2;
+    private $myTandem;
 
 
     /**
-     * Set user1
+     * Set myTandem
      *
-     * @param \AppBundle\Entity\Tandem $user1
+     * @param \AppBundle\Entity\User $myTandem
      * @return User
      */
-    public function setUser1(\AppBundle\Entity\Tandem $user1 = null)
+    public function setMyTandem(\AppBundle\Entity\User $myTandem = null)
     {
-        $this->user1 = $user1;
+        $this->myTandem = $myTandem;
 
         return $this;
     }
 
     /**
-     * Get user1
+     * Get myTandem
      *
-     * @return \AppBundle\Entity\Tandem 
+     * @return \AppBundle\Entity\User 
      */
-    public function getUser1()
+    public function getMyTandem()
     {
-        return $this->user1;
+        return $this->myTandem;
     }
+    /**
+     * @var \AppBundle\Entity\Tandem
+     */
+    private $tandem;
+
 
     /**
-     * Set user2
+     * Set tandem
      *
-     * @param \AppBundle\Entity\Tandem $user2
+     * @param \AppBundle\Entity\Tandem $tandem
      * @return User
      */
-    public function setUser2(\AppBundle\Entity\Tandem $user2 = null)
+    public function setTandem(\AppBundle\Entity\Tandem $tandem = null)
     {
-        $this->user2 = $user2;
+        $this->tandem = $tandem;
 
         return $this;
     }
 
     /**
-     * Get user2
+     * Get tandem
      *
      * @return \AppBundle\Entity\Tandem 
      */
-    public function getUser2()
+    public function getTandem()
     {
-        return $this->user2;
+        return $this->tandem;
     }
 }

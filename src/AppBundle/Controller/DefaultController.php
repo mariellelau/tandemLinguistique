@@ -21,4 +21,18 @@ class DefaultController extends Controller
             )
         );
     }
+
+    /**
+     * @Route("/admin/users", name="admin")
+     */
+    public function adminAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('AppBundle:User')->findAll();
+
+        return $this->render('@App/admin/index.html.twig', array(
+                'users' => $users,
+            )
+        );
+    }
 }

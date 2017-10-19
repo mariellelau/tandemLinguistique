@@ -1,19 +1,41 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="row">
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            Bienvenue sur cette nouvelle plateforme qui permet de te trouver ton binôme linguistique.
+        </div>
+        <div class="col-md-offset-2 col-md-8">
+            <h4>Comment faire ?</h4 >
+            <p>
+                Pour cela, rien de plus simple. Il suffit de t'inscrire, de renseigner ta ville et la langue que tu souhaites apprendre. Ensuite on te trouve ton binôme, et tu n'as plus qu'à te reconnecter pour prendre contact avec lui/elle !
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-3">
+           <a class="btn btn-primary" href="{{ path('fos_user_security_login') }}">Se connecter</a></button>
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-primary" href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
+        </div>
+    </div>
+</div>
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+<div class="container">
     <div class="col-md-offset-2 col-md-8">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dignissimos dolorem doloremque error exercitationem facilis iste iure iusto maxime nam nisi optio praesentium quam, quas quo repellat saepe vero voluptate?
+        {% for user in users %}
+            {% if user == app.user %}
+                {% if user.tandem.myTandem is not null %}
+                    Tandem trouvé, tu peux le/la contacter : {{ user.tandem.myTandem.email }}
+                    {% else %}
+                    Tandem pas encore trouvé, n'hésite pas à revenir régulièrement
+                {% endif %}
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
-<div class="row">
-    <div class="col-md-offset-4 col-md-6">
-        <a class="btn" href="{{ path('fos_user_security_login') }}">Se connecter</a>
-    </div>
-</div>
-<div>
-    {% for user in users %}
-        {{ user.username }}
-    {% endfor %}
-</div>
+{% endif %}
 {% endblock %}

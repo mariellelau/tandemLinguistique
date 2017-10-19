@@ -2,12 +2,12 @@
 {% block body %}
 <div>
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        {{ "Vous êtes déjà connecté" }}
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
         <a href="{{ path('fos_user_security_logout') }}">
-            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            {{ 'Se déconnecter'|trans({}, 'FOSUserBundle') }}
         </a>
     {% else %}
-        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
     {% endif %}
 </div>
 

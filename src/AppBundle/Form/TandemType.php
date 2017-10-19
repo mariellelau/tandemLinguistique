@@ -14,8 +14,8 @@ class TandemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('user1')
-            ->add('user2')
+            ->add('user')
+            ->add('myTandem')
         ;
     }
     

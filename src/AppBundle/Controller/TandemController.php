@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Tandem;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Tandem controller.
@@ -33,9 +34,18 @@ class TandemController extends Controller
      */
     public function newAction(Request $request)
     {
+        $session = $this->get('request')->getSession();
+
+
         $tandem = new Tandem();
         $form = $this->createForm('AppBundle\Form\TandemType', $tandem);
         $form->handleRequest($request);
+
+        if ($tandem->getUser()){
+            $this->container->get('session')->getFlashBag()->set(
+                'notice', 'Vous avez un tandem'
+            );
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();

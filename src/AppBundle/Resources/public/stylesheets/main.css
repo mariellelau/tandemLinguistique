@@ -5,4 +5,6 @@ body {
 .container {
     background-color: #FFFFFF;
     border: 1px black solid;
-    padding:10px;}
+    padding:10px;
+    margin-bottom: 10px;
+}

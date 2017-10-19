@@ -13,10 +13,10 @@
         </thead>
         <tbody>
         {% for tandem in tandems %}
+            {{ dump(tandem) }}
             <tr>
                 <td><a href="{{ path('tandem_show', { 'id': tandem.id }) }}">{{ tandem.id }}</a></td>
-                <td>{{ tandem.user1 }}</td>
-                <td>{{ tandem.user2 }}</td>
+                <td>{{ tandem.myTandem }}</td>
             </tr>
         {% endfor %}
         </tbody>

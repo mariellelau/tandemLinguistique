@@ -2,23 +2,15 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Tandem
  */
 class Tandem
 {
     /**
-     * @var int
+     * @var integer
      */
     private $id;
-
-    /**
-     * @var string
-     */
-    private $user1;
-
 
     /**
      * Get id
@@ -29,109 +21,60 @@ class Tandem
     {
         return $this->id;
     }
+    /**
+     * @var \AppBundle\Entity\User
+     */
+    private $user;
 
     /**
-     * Set user1
+     * @var \AppBundle\Entity\User
+     */
+    private $myTandem;
+
+
+    /**
+     * Set user
      *
-     * @param string $user1
+     * @param \AppBundle\Entity\User $user
      * @return Tandem
      */
-    public function setUser1($user1)
+    public function setUser(\AppBundle\Entity\User $user = null)
     {
-        $this->user1 = $user1;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get user1
+     * Get user
      *
-     * @return string 
+     * @return \AppBundle\Entity\User 
      */
-    public function getUser1()
+    public function getUser()
     {
-        return $this->user1;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $user2;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->user1 = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->user2 = new \Doctrine\Common\Collections\ArrayCollection();
+        return $this->user;
     }
 
     /**
-     * Add user1
+     * Set myTandem
      *
-     * @param \AppBundle\Entity\User $user1
+     * @param \AppBundle\Entity\User $myTandem
      * @return Tandem
      */
-    public function addUser1(\AppBundle\Entity\User $user1)
+    public function setMyTandem(\AppBundle\Entity\User $myTandem = null)
     {
-        $this->user1[] = $user1;
+        $this->myTandem = $myTandem;
 
         return $this;
     }
 
     /**
-     * Remove user1
+     * Get myTandem
      *
-     * @param \AppBundle\Entity\User $user1
+     * @return \AppBundle\Entity\User 
      */
-    public function removeUser1(\AppBundle\Entity\User $user1)
+    public function getMyTandem()
     {
-        $this->user1->removeElement($user1);
-    }
-
-    /**
-     * Add user2
-     *
-     * @param \AppBundle\Entity\User $user2
-     * @return Tandem
-     */
-    public function addUser2(\AppBundle\Entity\User $user2)
-    {
-        $this->user2[] = $user2;
-
-        return $this;
-    }
-
-    /**
-     * Remove user2
-     *
-     * @param \AppBundle\Entity\User $user2
-     */
-    public function removeUser2(\AppBundle\Entity\User $user2)
-    {
-        $this->user2->removeElement($user2);
-    }
-
-    /**
-     * Get user2
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getUser2()
-    {
-        return $this->user2;
-    }
-
-    /**
-     * Set user2
-     *
-     * @param \AppBundle\Entity\User $user2
-     * @return Tandem
-     */
-    public function setUser2(\AppBundle\Entity\User $user2 = null)
-    {
-        $this->user2 = $user2;
-
-        return $this;
+        return $this->myTandem;
     }
 }

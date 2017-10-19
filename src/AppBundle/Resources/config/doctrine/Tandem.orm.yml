@@ -10,9 +10,10 @@ AppBundle\Entity\Tandem:
                 strategy: AUTO
     lifecycleCallbacks: {  }
     oneToOne:
-        user1:
+        user:
             targetEntity: AppBundle\Entity\User
-            inversedBy: user1
-        user2:
+        myTandem:
             targetEntity: AppBundle\Entity\User
-            inversedBy: user2
+            joinColumn:
+                name: myTandem_id
+                referencedColumnName: id

@@ -6,11 +6,15 @@ AppBundle\Entity\User:
             type: integer
             generator:
                 strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+        city:
+            type: string
+            length: 255
     oneToOne:
-        user1:
+        tandem:
             targetEntity: AppBundle\Entity\Tandem
-            mappedBy: user1
-        user2:
-            targetEntity: AppBundle\Entity\Tandem
-            mappedBy: user2
+            mappedBy: user
     lifecycleCallbacks: {  }
